@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -9,27 +10,27 @@
     <script src="moment.min.js"></script>
     <title>Lab 3</title>
 </head>
+
 <body>
     <div class="container">
         <h2>Beverage Order</h2>
 
-        <form action="">
+        <form id="beverage-form">
             <div class="form-group form-inline">
                 <label for="cust_name" class="pr-5">Customer Name</label>
-                <input type="text" class="form-control" name="cust_name" id="cust_name">
+                <input type="text" class="form-control" name="custName" id="custName">
             </div>
 
             <div class="form-group form-inline">
-                <label for="dropdownbtn" class="pr-5">Beverage</label>
-                <button class="btn btn-secondary dropdown-toggle mr-5" type="button" name="dropdownbtn" id="dropdownbtn" data-toggle="dropdown">Dropdown</button>
-                <div class="dropdown-menu">
-                    <p>Coffee</p>
-                    <p>Tea</p>
-                    <p>Beer</p>
-                    <p>Wine</p>
-                </div>
+                <label for="beverage" class="pr-5">Beverage</label>
+                <select class="form-control pr-5" id="beverage" name="beverage">
+                    <option value="0">Coffee</option>
+                    <option value="1">Tea</option>
+                    <option value="2">Beer</option>
+                    <option value="3">Wine</option>
+                </select>
 
-                <label for="quantity" class="pr-3">Quantity</label>
+                <label for="quantity" class="pr-3 pl-5">Quantity</label>
                 <input type="number" class="form-control" name="quantity" id="quantity" />
             </div>
 
@@ -38,15 +39,20 @@
                 <input type="date" name="birthdate" id="birthdate" />
             </div>
 
-            <input type="submit" id="submit" class=" btn btn-success" value="Submit Order" />
-
+            <button type="button" id="bev-submit" class="btn btn-success">Submit Order</button>
+            <!-- <input type="submit" id="beverage-submit" class="btn btn-success" value="Submit Order" /> -->
         </form>
 
-        <div class="container border w-25 m-3 d-none">
-            <h1>HELLO</h1>
+        <p id="tester"></p>
+
+        <div class="container border w-25 m-3">
+            <p id="cust">Customer: </p>
+            <p id="items">Items: </p>
+            <p id="total">Total Due: </p>
         </div>
     </div>
 
     <script src="processing.js"></script>
 </body>
+
 </html>
